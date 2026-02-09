@@ -115,6 +115,7 @@ Common errors and fixes
 ## Project Structure (High Level)
 ```bash
 DataPorter/
+├── Sample Data
 ├── src/ dataporter/
 │       ├── engines/     # Database engines
 │       ├── loaders/     # Bulk loading strategies
@@ -123,9 +124,9 @@ DataPorter/
 │       ├── profiles/    # Profile management
 │       └── utils/       # Shared utilities
 ├── tests/
-├── profiles.yaml
 ├── pyproject.toml
 ├── README.md
+├── GETTING_STARTED.md
 ├── LICENSE
 └── .gitignore
 ```
