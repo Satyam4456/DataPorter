@@ -55,7 +55,7 @@ Step 1: Core installation
 Install the package directly from GitHub:
 
 ```bash
-pip install git+https://github.com/<your-username>/dataporter.git
+pip install git+https://github.com/Satyam4456/DataPorter.git
 ```
 
 Step 2: Database-Specific Support  
@@ -63,22 +63,22 @@ Now, install the required package for the databases you want to use, you don't n
 
 - For PostgreSQL
 ```bash
-pip install "dataporter[postgres] @ git+https://github.com/<your-username>/dataporter.git"
+pip install "dataporter[postgres] @ git+https://github.com/Satyam4456/DataPorter.git"
 ```
 
 - For MySQL
 ```bash
-pip install "dataporter[mysql] @ git+https://github.com/<your-username>/dataporter.git"
+pip install "dataporter[mysql] @ git+https://github.com/Satyam4456/DataPorter.git"
 ```
 
 - For SQL Server
 ```bash
-pip install "dataporter[sqlserver] @ git+https://github.com/<your-username>/dataporter.git"
+pip install "dataporter[sqlserver] @ git+https://github.com/Satyam4456/DataPorter.git"
 ```
 
 - For Google BigQuery
 ```bash
-pip install "dataporter[gcp] @ git+https://github.com/<your-username>/dataporter.git"
+pip install "dataporter[gcp] @ git+https://github.com/Satyam4456/DataPorter.git"
 ```
 
 Step 3: Verify Installation
