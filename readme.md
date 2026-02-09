@@ -1,5 +1,9 @@
 # DataPorter
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+
+
 **DataPorter** is a scalable Python-based data ingestion framework for importing large CSV/TSV files into relational databases **without loading the entire dataset into memory**.
 
 It is designed to handle **real-world, messy data** and work reliably across **PostgreSQL, MySQL, SQL Server, and Google BigQuery**.
@@ -56,7 +60,7 @@ DataPorter solves this by providing:
 ### 1️⃣ Install
 
 ```bash
-pip install git+https://github.com/<your-username>/dataporter.git
+pip install git+https://github.com/Satyam4456/DataPorter.git
 ```
 
 ### 2️⃣ Create a Database Profile
