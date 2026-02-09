@@ -21,21 +21,14 @@ except ImportError:
 
 def get_global_profiles_path() -> Path:
     """
-    Get the global profiles.yaml path in DataPorter project root.
+    Get global profiles.yaml path in user home directory.
     
-    For src-layout packages:
-    dataporter.__file__ → src/dataporter/__init__.py
-    parents[0] → dataporter/
-    parents[1] → src/
-    parents[2] → project_root/
-    
-    Returns:
-        Path to profiles.yaml in project root
+    Windows:  C:\\Users\\<user>\\.dataporter\\profiles.yaml
+    Unix:     ~/.dataporter/profiles.yaml
     """
-    import dataporter
-    project_root = Path(dataporter.__file__).resolve().parents[2]
-    profiles_path = project_root / "profiles.yaml"
-    return profiles_path
+    home = Path.home()
+    config_dir = home / ".dataporter"
+    return config_dir / "profiles.yaml"
 
 
 def load_profiles() -> Dict[str, Any]:
