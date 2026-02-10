@@ -30,15 +30,16 @@ class PostgresEngine(Engine):
     def test_connection(self) -> bool:
         """Test database connection."""
         try:
-            import psycopg2
+            import psycopg
             
-            conn = psycopg2.connect(
+            conn = psycopg.connect(
                 host=self.config.get('host', 'localhost'),
                 port=self.config.get('port', 5432),
                 user=self.config.get('user', 'postgres'),
                 password=self.config.get('password', ''),
-                database=self.config.get('database', '')
+                dbname=self.config.get('database', '')
             )
+
             conn.close()
             logger.info("PostgreSQL connection successful")
             return True
@@ -51,13 +52,14 @@ class PostgresEngine(Engine):
         Ensures the 'connection' attribute is populated and returned.
         """
         if getattr(self, 'connection', None) is None:
-            import psycopg2
-            self.connection = psycopg2.connect(
+            import psycopg
+
+            self.connection = psycopg.connect(
                 host=self.config.get('host', 'localhost'),
                 port=self.config.get('port', 5432),
                 user=self.config.get('user', 'postgres'),
                 password=self.config.get('password', ''),
-                database=self.config.get('database', '')
+                dbname=self.config.get('database', '')
             )
         return self.connection
     
@@ -70,7 +72,7 @@ class PostgresEngine(Engine):
             password_encoded = quote_plus(self.config.get('password', ''))
             
             connection_string = (
-                f"postgresql+psycopg2://{self.config.get('user', 'postgres')}:{password_encoded}"
+                f"postgresql+psycopg://{self.config.get('user', 'postgres')}:{password_encoded}"
                 f"@{self.config.get('host', 'localhost')}:{self.config.get('port', 5432)}"
                 f"/{self.config.get('database', '')}"
             )
