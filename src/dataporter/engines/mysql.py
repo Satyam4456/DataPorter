@@ -123,16 +123,15 @@ class MySQLEngine(Engine):
         table_name = schema.table_name
         
         # Check if exists
-        exists = self.table_exists(table_name)
-        
-        if exists:
-            if if_exists == 'fail':
-                raise TableCreationError(f"Table {table_name} already exists")
-            elif if_exists == 'replace':
-                self.drop_table(table_name)
-            elif if_exists == 'append':
-                logger.info(f"Table {table_name} exists, will append data")
-                return
+        if if_exists == "replace":
+            self.drop_table(table_name)
+
+        elif if_exists == "fail" and self.table_exists(table_name):
+            raise TableCreationError(f"Table {table_name} already exists")
+
+        elif if_exists == "append":
+            logger.info(f"Table {table_name} exists, will append data")
+            return
         
         # Build CREATE TABLE statement
         columns_sql = []

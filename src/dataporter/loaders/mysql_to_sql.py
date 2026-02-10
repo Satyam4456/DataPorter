@@ -59,7 +59,7 @@ class MySQLToSqlLoader(LoaderStrategy):
                     chunk_converted.to_sql(
                         table_name,
                         con=sqlalchemy_engine,
-                        if_exists='replace',
+                        if_exists='append',
                         index=False,
                         dtype=dtype_map,
                     )
