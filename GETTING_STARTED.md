@@ -51,6 +51,8 @@ Create a Sample.csv for testing or
 You can use the Sample data provided in this repository also.
 
 ## Installation
+Recomended to use a virtual environment, as your environment depedencies may create conflict.
+
 Step 1: Core installation  
 Install the package directly from GitHub:
 

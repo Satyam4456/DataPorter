@@ -57,7 +57,7 @@ DataPorter solves this by providing:
 
 ## Quick Start (2 Minutes)
 
-### 1️⃣ Install
+### 1️⃣ Install (Use a Virtual Environment)
 
 ```bash
 pip install git+https://github.com/Satyam4456/DataPorter.git

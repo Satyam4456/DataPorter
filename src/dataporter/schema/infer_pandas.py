@@ -9,6 +9,14 @@ from dataporter.schema.model import TableSchema, ColumnSchema
 from dataporter.schema.mapper import ENGINE_TYPE_MAPS
 import logging
 
+from pandas.api.types import (
+    is_object_dtype,
+    is_string_dtype,
+    is_bool_dtype,
+    is_integer_dtype,
+    is_float_dtype,
+)
+
 logger = logging.getLogger(__name__)
 
 
@@ -63,8 +71,7 @@ class PandasSchemaInferencer(SchemaInferenceStrategy):
         
         # Get initial pandas dtype
         dtype = series.dtype
-        
-        # Try to refine object columns
+
         if dtype == 'object':
             inferred_kind, confidence = self._refine_object_column(series)
         elif dtype == 'bool':
