@@ -152,8 +152,27 @@ A learning-grade ETL framework
 
 A portfolio-quality data engineering project
 
+# Known Limitations & Feedback
 
-#Next Steps
+This project has been tested in fresh virtual environment against the following setups:
+- Python 3.14.2
+- MySQL 8.0.44
+- SQL Server 2025 17.0.925.4
+- Aiven MySQL
+- Aiven PostgreSQL
+- Azure SQL
+- BigQuery
+
+If you encounter any issues, edge cases, or database-specific behavior that does not work as expected, please open an issue or contact me with:
+
+- Database type and version
+- Python version
+- Installation method (pip / GitHub)
+- Error message or traceback
+
+Feedback and bug reports are welcome and help improve the tool.
+
+# Next Steps
 
 📘 Read the full onboarding guide → GETTING_STARTED.md
 
