@@ -451,6 +451,7 @@ class DataPorter:
     def import_folder(
         self,
         folder_path: str,
+        server_type: str,
         pattern: str = "*.csv",
         delimiter: str = ",",
         encoding: str = "utf-8",
@@ -465,6 +466,8 @@ class DataPorter:
         skip_files: Optional[List[str]] = None,
     ) -> Dict[str, ImportReport]:
         """Import all matching files from a folder."""
+        self.server_type = server_type
+        
         from dataporter.batch import BatchImporter
         
         batch_importer = BatchImporter(
@@ -493,11 +496,14 @@ class DataPorter:
     def import_folder_with_callbacks(
         self,
         folder_path: str,
+        server_type: str,
         on_success: Optional[Callable] = None,
         on_error: Optional[Callable] = None,
         **kwargs,
     ) -> Dict[str, ImportReport]:
         """Import folder with callback functions."""
+        self.server_type = server_type
+        
         from dataporter.batch import BatchImporter
         
         batch_importer = BatchImporter(

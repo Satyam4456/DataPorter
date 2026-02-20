@@ -269,8 +269,8 @@ porter.preview_schema(file_path="data.csv")
 
 # Import
 porter.import_file(file_path="data.csv", table="t1", server_type="local")
-porter.import_folder(folder_path="data/", pattern="*.csv")
-porter.import_folder_with_callbacks(folder_path="data/", on_success=func)
+porter.import_folder(folder_path="data/", server_type="cloud/local", pattern="*.csv")
+porter.import_folder_with_callbacks(folder_path="data/", server_type="cloud/local", on_success=func)
 
 # Configuration
 porter.set_log_level(logging.DEBUG)
